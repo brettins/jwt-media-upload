@@ -2,7 +2,9 @@ import axios from "axios";
 
 import i18n from '@/i18n'
 
-import { bytesToMegabytes } from "@/helpers/conversions"
+function bytesToMegabytes(bytes,sigDigs = 2) {
+  return (bytes / (1024 * 1024)).toFixed(sigDigs)
+}
 
 export default async function (fileEvent, jwt, maxSize, requirements = {}) {
   return new Promise((resolve, reject) => {
