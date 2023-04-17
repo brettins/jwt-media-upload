@@ -6,7 +6,7 @@ function bytesToMegabytes(bytes,sigDigs = 2) {
   return (bytes / (1024 * 1024)).toFixed(sigDigs)
 }
 
-export default async function (fileEvent, jwt, maxSize, requirements = {}) {
+export default async function (fileEvent, postUrl, jwt, maxSize, requirements = {}) {
   return new Promise((resolve, reject) => {
     try {
       const reader = new FileReader();
@@ -47,7 +47,7 @@ export default async function (fileEvent, jwt, maxSize, requirements = {}) {
               headers.Authorization = "Bearer " + jwt
             }
             let response = await axios.post(
-              process.env.VUE_APP_SERVER_HOST + "/media_objects",
+              postUrl,
               bodyFormData,
               {
                 headers: headers,
