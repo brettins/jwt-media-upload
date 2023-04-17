@@ -1,0 +1,9 @@
+{
+  "name": "jwt-media-upload",
+  "version": "1.0.0",
+  "description": "Upload to a REST with a jwt with some basic error handling",
+  "main": "mediaObjectUpload.js",
+  "repository": "git@github.com:brettins/jwt-media-upload.git",
+  "author": "Brett Ludwig <brettludwig@gmail.com>",
+  "license": "MIT"
+}
